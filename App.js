@@ -1,29 +1,29 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View, Image, ScrollView, TextInput} from 'react-native';
 
-const styles = StyleSheet.create({
-        center: {
-            alignItems: 'center',
-        },
-});
-
-const Greeting = props => {
-    return (
-    <View style={styles.center}>
-    <Text>Hello {props.name}!</Text>
+const a = function App() {
+   return(
+   <ScrollView>
+    <Text>Some Text </Text>
+    <View>
+        <Text> Some more text</Text>
+        <Image
+            source = {{
+                uri:'https://reactnative.dev/docs/assets/p_cat2.png',
+            }}
+            style={{width:200, height:200}}
+            />
     </View>
-    );
+    <TextInput
+        style={{
+                height:100,width:200,
+                borderColor: 'gray',
+                borderWidth: 1,
+            }}
+            defaultValue="You can type in me"
+    />
+   </ScrollView>
+   );
 };
 
-const LotsOfGreetings = () => {
-    return (
-        <View style={[styles.center, {top:50}]}>
-        <Greeting name='Colin'/>
-        <Greeting name='Andrew'/>
-        <Greeting name='Duncan'/>
-        <Greeting name='Betseyy'/>
-        </View>
-    );
-};
-
-export default LotsOfGreetings;
+export default a;
