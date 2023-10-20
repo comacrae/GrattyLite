@@ -1,29 +1,21 @@
-import React from 'react';
-import {Text, View, Image, ScrollView, TextInput} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, Image} from 'react-native';
 
-const a = function App() {
-   return(
-   <ScrollView>
-    <Text>Some Text </Text>
+function CatApp() {
+  return (
     <View>
-        <Text> Some more text</Text>
-        <Image
-            source = {{
-                uri:'https://reactnative.dev/docs/assets/p_cat2.png',
-            }}
-            style={{width:200, height:200}}
-            />
-    </View>
-    <TextInput
+      <Image
+        source={{
+          uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
+        }}
         style={{
-                height:100,width:200,
-                borderColor: 'gray',
-                borderWidth: 1,
-            }}
-            defaultValue="You can type in me"
-    />
-   </ScrollView>
-   );
-};
+          width: 200,
+          height: 200,
+        }}
+      />
+      <Text>Hello, I am your cat!</Text>
+    </View>
+  );
+}
 
-export default a;
+export default CatApp;
