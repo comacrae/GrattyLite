@@ -1,21 +1,31 @@
 import React, {useState} from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Button} from 'react-native';
 
-function CatApp() {
+const Cat = props => {
+  const [isHungry, setIsHungry] = useState(true);
   return (
     <View>
-      <Image
-        source={{
-          uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
+      <Text>
+        I am {props.name}, and I am {isHungry ? 'hungry!' : 'full.'}!
+      </Text>
+      <Button
+        onPress={() => {
+          setIsHungry(false);
         }}
-        style={{
-          width: 200,
-          height: 200,
-        }}
+        disabled={!isHungry}
+        title={isHungry ? 'Pour me some milk please!' : 'Thank you!'}
       />
-      <Text>Hello, I am your cat!</Text>
     </View>
   );
-}
+};
 
-export default CatApp;
+const Kitties = () => {
+  return (
+    <>
+      <Cat name="Mishu" />
+      <Cat name="Aka" />
+    </>
+  );
+};
+
+export default Kitties;
