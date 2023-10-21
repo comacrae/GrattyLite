@@ -1,37 +1,30 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 22,
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-});
+import {StyleSheet, Text, View} from 'react-native';
 
-const FlatListBasics = () => {
+const LotsOfStyles = () => {
   return (
     <View style={styles.container}>
-      <FlatList
-        data={[
-          {key: 'Devin'},
-          {key: 'Dan'},
-          {key: 'Dominic'},
-          {key: 'Jackson'},
-          {key: 'James'},
-          {key: 'Joel'},
-          {key: 'John'},
-          {key: 'Jillian'},
-          {key: 'Jimmy'},
-          {key: 'Julie'},
-        ]}
-        renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-      />
+      <Text style={styles.red}>just red</Text>
+      <Text style={styles.bigBlue}>just bigBlue</Text>
+      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
+      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
     </View>
   );
 };
 
-export default FlatListBasics;
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 50,
+  },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+    fontSize: 18,
+  },
+});
+
+export default LotsOfStyles;
