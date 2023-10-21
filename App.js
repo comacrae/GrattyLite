@@ -1,48 +1,37 @@
-import React, {useState} from 'react';
-import {Image, Text, ScrollView} from 'react-native';
+import React from 'react';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 22,
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
+});
 
-const logo = {
-  uri: 'https://reactnative.dev/img/tiny_logo.png',
-  width: 64,
-  height: 64,
+const FlatListBasics = () => {
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={[
+          {key: 'Devin'},
+          {key: 'Dan'},
+          {key: 'Dominic'},
+          {key: 'Jackson'},
+          {key: 'James'},
+          {key: 'Joel'},
+          {key: 'John'},
+          {key: 'Jillian'},
+          {key: 'Jimmy'},
+          {key: 'Julie'},
+        ]}
+        renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+      />
+    </View>
+  );
 };
 
-function App() {
-  return (
-    <ScrollView>
-      <Text>Scroll me plz....</Text>
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-      <Image source={logo} />
-    </ScrollView>
-  );
-}
-
-export default App;
+export default FlatListBasics;
