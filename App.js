@@ -1,26 +1,48 @@
 import React, {useState} from 'react';
-import {Text, View, TextInput} from 'react-native';
+import {Image, Text, ScrollView} from 'react-native';
 
-const PizzaApp = () => {
-  const [text, setText] = useState('');
-  return (
-    <View style={{padding: 10}}>
-      <TextInput
-        style={{
-          height: 40,
-        }}
-        defaultValue={text}
-        placeholder="Type here to translate!"
-        onChangeText={newText => setText(newText)}
-      />
-      <Text style={{padding: 10, fontSize: 28}}>
-        {text
-          .split(' ')
-          .map(word => word && '🍕')
-          .join(' ')}
-      </Text>
-    </View>
-  );
+const logo = {
+  uri: 'https://reactnative.dev/img/tiny_logo.png',
+  width: 64,
+  height: 64,
 };
 
-export default PizzaApp;
+function App() {
+  return (
+    <ScrollView>
+      <Text>Scroll me plz....</Text>
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+      <Image source={logo} />
+    </ScrollView>
+  );
+}
+
+export default App;
