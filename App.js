@@ -1,31 +1,26 @@
 import React, {useState} from 'react';
-import {Text, View, Button} from 'react-native';
+import {Text, View, TextInput} from 'react-native';
 
-const Cat = props => {
-  const [isHungry, setIsHungry] = useState(true);
+const PizzaApp = () => {
+  const [text, setText] = useState('');
   return (
-    <View>
-      <Text>
-        I am {props.name}, and I am {isHungry ? 'hungry!' : 'full.'}!
-      </Text>
-      <Button
-        onPress={() => {
-          setIsHungry(false);
+    <View style={{padding: 10}}>
+      <TextInput
+        style={{
+          height: 40,
         }}
-        disabled={!isHungry}
-        title={isHungry ? 'Pour me some milk please!' : 'Thank you!'}
+        defaultValue={text}
+        placeholder="Type here to translate!"
+        onChangeText={newText => setText(newText)}
       />
+      <Text style={{padding: 10, fontSize: 28}}>
+        {text
+          .split(' ')
+          .map(word => word && '🍕')
+          .join(' ')}
+      </Text>
     </View>
   );
 };
 
-const Kitties = () => {
-  return (
-    <>
-      <Cat name="Mishu" />
-      <Cat name="Aka" />
-    </>
-  );
-};
-
-export default Kitties;
+export default PizzaApp;
