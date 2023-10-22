@@ -14,7 +14,7 @@ const LotsOfStyles = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    marginTop: 51,
   },
   bigBlue: {
     color: 'blue',
